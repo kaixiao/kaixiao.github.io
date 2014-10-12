@@ -33,7 +33,7 @@ html {
 
 body {
   font-family: 'Exo', serif;
-  font-size: 15px;
+  font-size: 20px;
   color: white;
   text-align: center;
 }
@@ -43,6 +43,7 @@ h1{
 }
 h2{
   font-size: 20px;
+  font-style: italic;
 }
 
 #iconscontainer ul
@@ -62,9 +63,17 @@ h2{
 	margin:auto;
 }
 
+#info-text {
+  padding-top: 20px;
+  width: 100%;
+  text-align: center;
+  position: absolute;
+}
+
 #copyright {
   position: absolute;
   bottom: 30px;
   width: 100%;
   text-align: center;
+  opacity: 0.6;
 }
