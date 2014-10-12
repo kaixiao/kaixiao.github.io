@@ -9,25 +9,17 @@
   font-style: normal;
 }
 
-[class*="icon-"] {
-  font-family: 'fontello';
-  font-style: normal;
-  font-size: 3em;
-  speak: none;
-}
 
-
-.icons{
-	margin-left:3px;
-	margin-right:3px;
-	opacity:0.5;
-	height:200px;
+.icon{
+	opacity:0.4;
+	height:150px;
 	filter:alpha(opacity=30);
 }
-.icons:hover{
+.icon:hover{
 	opacity:1.0;
 	filter:alpha(opacity=100);
 }
+
 
 html {
   background:url('../img/birds-nest-blur-2.jpg') no-repeat center center fixed;
@@ -53,26 +45,22 @@ h2{
   font-size: 20px;
 }
 
-#navcontainer ul
+#iconscontainer ul
 {
-margin: 0;
-padding: 50px;
-list-style-type: none;
-text-align: center;
-position: relative;
-height: 150px;
+  padding: 50px;
+  margin:auto;
+  text-align: center;
+  position: relative;
+  height: 100px;
 }
 
-#navcontainer ul li { display: inline; }
-#navcontainer ul li img {
+#iconscontainer ul li { display: inline; }
+#iconscontainer ul li img {
 	max-height: 100%;
 	max-width: 100%;
+  padding: 25px;
 	margin:auto;
-	display: inline;
 }
-
-
-
 
 #copyright {
   position: absolute;
@@ -80,16 +68,3 @@ height: 150px;
   width: 100%;
   text-align: center;
 }
-/*
-.nav li:before {
-  content: "";
-  display: block;
-  border-top: 1px solid #ddd;
-  border-bottom: 1px solid #fff;
-  width: 100%;
-  height: 1px;
-  position: absolute;
-  top: 50%;
-  z-index: -1;
-}
-*/
