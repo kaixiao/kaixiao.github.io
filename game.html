@@ -3,5 +3,299 @@
 <head> 
     <meta charset="UTF-8" />
     <title>Phaser - Kai's Coursework</title>
+    <script type="text/javascript" src="js/phaser.min.js"></script>
+    <style type="text/css">
+        body {
+            margin: 0;
+        }
+    </style>
 </head>
 <body>
+
+<script type="text/javascript">
+
+var game = new Phaser.Game(1300, 800, Phaser.AUTO, '', { preload: preload, create: create, update: update, render: render });
+
+function preload() {
+
+    game.load.image('sky', 'assets/sky.png');
+    game.load.image('ground', 'assets/wallHorizontal.png');
+    game.load.image('star', 'assets/star.png');
+    game.load.image('diamond', 'assets/diamond.png');
+    game.load.image('wall', 'assets/wallVertical.png');
+    game.load.spritesheet('dude', 'assets/dude.png', 32, 48);
+
+}
+
+var player;
+var platforms;
+var cursors;
+
+var stars;
+var score = 0;
+var scoreText;
+var sprite;
+var left = true;
+var counter = 0;
+var map = []; //maps diamonds to their text
+var map2 = []; //maps text to their box endpoints
+
+function doshit (text, length, level, start, isEnd) {
+
+    var scale = 1;
+    var wallWidth = 2;
+    var gap = 25+Math.floor(Math.random()*50);
+    var height = 200;
+    var initalheight = 600;
+
+    var size = scale*200;
+
+
+
+    var ground = platforms.create(start*size*2, initalheight+height*level, 'ground');
+    //  Scale it to fit the width of the game (the original sprite is 200x16 in size)
+    ground.scale.setTo((length-gap/size)*scale, 1);
+    ground.body.immovable = true;
+    var ground = platforms.create(start*size*2+size*length+gap, initalheight+height*level, 'ground');
+    ground.scale.setTo((length-gap/size)*scale, 1);
+    ground.body.immovable = true;
+
+    var wall = platforms.create(start*size*2, initalheight+height*level, 'wall');
+    wall.scale.setTo(wallWidth, 9-level);
+    wall.body.immovable = true;
+    var wall = platforms.create(start*size*2+size*2*length, initalheight+height*level, 'wall');
+    wall.scale.setTo(wallWidth, 9-level);
+    wall.body.immovable = true;
+
+    if (isEnd) {
+        var ground = platforms.create(start*size*2, initalheight+height*(level+1), 'ground');
+        ground.scale.setTo(length*scale*2, 1);
+        ground.body.immovable = true;
+    }
+
+    var style = { font: "20pt Arial", fill: "rgba(50,50,50,0)", align: "center", wordWrap: "true", wordWrapWidth: "300"};
+    var t = game.add.text(start*size*2+size*length-140, initalheight+height*level+height/2, text, style);
+
+
+    sprite = sprites.create(start*size*2+gap-29, initalheight-29+height*(level+1), 'diamond');
+    sprite.name = counter;
+    map[counter] = t;
+    map2[counter] = size*length;
+    counter += 1;
+    // game.physics.arcade.enable(sprite);
+    sprite.body.gravity.y = 0;
+    sprite.body.gravity.x = 200;
+    sprite.body.bounce.x = 1.0;
+    sprite.body.collideWorldBounds = true;
+
+
+}
+
+
+function create() {
+    game.world.setBounds(-10, -10, 10000, 2000);
+    land = game.add.tileSprite(10, 10, 1300, 800, 'sky');
+    land.fixedToCamera = true;
+
+
+    //  We're going to be using physics, so enable the Arcade Physics system
+    game.physics.startSystem(Phaser.Physics.ARCADE);
+
+    //  A simple background for our game
+
+    //  The platforms group contains the ground and the 2 ledges we can jump on
+    platforms = game.add.group();
+
+    //  We will enable physics for any object that is created in this group
+    platforms.enableBody = true;
+    
+    sprites = game.add.group();
+    sprites.enableBody = true;
+
+    
+doshit('Fall 2013',4,0,0,false);
+doshit('6.01 - Intro to EECS I',1,1,0,true);
+doshit('8.022 - Electricity and Magnetism',1,1,1,true);
+doshit('17.30 - Making Public Policy',1,1,2,true);
+doshit('18.701 - Algebra I',1,1,3,true);
+doshit('Spring 2014',6,0,4,false);
+doshit('5.111 - Principles of Chemistry',1,1,4,true);
+doshit('6.005 - Software Construction',1,1,5,true);
+doshit('6.006 - Intro to Algorithms',1,1,6,true);
+doshit('6.046 - Design and Analysis of Algorithms',1,1,7,true);
+doshit('18.100C - Real Analysis',1,1,8,true);
+doshit('21W.789 - Communicating with Mobile Technology',1,1,9,true);
+doshit('Fall 2014',4,0,10,false);
+doshit('6.840 - Theory of Computation',1,1,10,true);
+doshit('6.854 - Advanced Algorithms',1,1,11,true);
+doshit('18.112 - Complex Analysis',1,1,12,true);
+doshit('21F.109 - Chinese III',1,1,13,true);
+doshit('Spring 2014 (Tentative)',3,0,14,false);
+doshit('6.004 - Computation Structures',1,1,14,true);
+doshit('8.04 - Quantum Mechanics I',1,1,15,true);
+doshit('21F.110 - Chinese IV',1,1,16,true);
+
+
+    var scale = 0.5;
+
+    var ground = platforms.create(0, 1800, 'ground');
+    ground.scale.setTo(20*scale, 3);
+    ground.body.immovable = true;
+    var ground = platforms.create(2200, 1800, 'ground');
+    ground.scale.setTo(60*scale, 3);
+    ground.body.immovable = true;
+
+
+    //  Now let's create two ledges
+    for (var i = 0; i < 20; i ++) {
+        for (var j = 0; j < 3; j ++) {
+            if (Math.random() > 0.6) {
+                var ledge = platforms.create(i*scale*600+j*100, 100+Math.random()*400, 'ground');
+                ledge.body.immovable = true;
+            }
+        }
+    }
+
+    ledge = platforms.create(0, 240, 'ground');
+    ledge.body.immovable = true;
+
+    // The player and its settings
+    player = game.add.sprite(32, 450, 'dude');
+    player.anchor.setTo(0.5, 0.5);
+    //  We need to enable physics on the player
+    game.physics.arcade.enable(player);
+
+    //  Player physics properties. Give the little guy a slight bounce.
+    player.body.bounce.y = 0.2;
+    player.body.gravity.y = 300;
+    player.body.collideWorldBounds = true;
+
+    //  Our two animations, walking left and right.
+    player.animations.add('left', [0, 1, 2, 3], 10, true);
+    player.animations.add('right', [5, 6, 7, 8], 10, true);
+    player.anchor.setTo(0.5, 0.5);
+
+    game.camera.follow(player);
+    game.camera.deadzone = new Phaser.Rectangle(150, 150, 500, 300);
+    game.camera.focusOnXY(0, 0);
+
+
+    //  Finally some stars to collect
+    stars = game.add.group();
+
+    //  We will enable physics for any star that is created in this group
+    stars.enableBody = true;
+
+    //  Here we'll create 12 of them evenly spaced apart
+    for (var i = 0; i < 9; i++)
+    {
+        //  Create a star inside of the 'stars' group
+        var star = stars.create(i * 70, 0, 'star');
+
+        //  Let gravity do its thing
+        star.body.gravity.y = 300;
+
+        //  This just gives each star a slightly random bounce value
+        star.body.bounce.y = 0.7 + Math.random() * 0.2;
+    }
+
+    //  The score
+    scoreText = game.add.text(16, 16, 'score: 0', {fontSize: '32px', fill: '#000' });
+    scoreText.fixedToCamera = true;
+
+    cursors = game.input.keyboard.createCursorKeys();
+        
+}
+
+function update() {
+
+    //  Collide the player and the stars with the platforms
+    game.physics.arcade.collide(player, platforms);
+    game.physics.arcade.collide(stars, platforms);
+    game.physics.arcade.collide(sprites, platforms);
+
+
+    //  Checks to see if the player overlaps with any of the stars, if he does call the collectStar function
+    game.physics.arcade.overlap(player, stars, collectStar, null, this);
+    game.physics.arcade.overlap(player, sprites, revealClue, null, this);
+
+    //  Reset the players velocity (movement)
+    player.body.velocity.x = 0;
+
+    if (cursors.left.isDown)
+    {
+        //  Move to the left
+        player.body.velocity.x = -150;
+
+        player.animations.play('left');
+    }
+    else if (cursors.right.isDown)
+    {
+        //  Move to the right
+        player.body.velocity.x = 150;
+
+        player.animations.play('right');
+    }
+    else
+    {
+        //  Stand still
+        player.animations.stop();
+
+        player.frame = 4;
+        if (game.input.keyboard.isDown(Phaser.Keyboard.SPACEBAR)){
+            if (game.physics.arcade.distanceToPointer(player, game.input.activePointer) > 8)
+            {
+                //  Make the object seek to the active pointer (mouse or touch).
+                game.physics.arcade.moveToPointer(player, 300);
+            }
+        }
+    }
+    
+    //  Allow the player to jump if they are touching the ground.
+    if (cursors.up.isDown && player.body.touching.down)
+    {
+        player.body.velocity.y = -350;
+    }
+
+    if (left) {
+        sprite.body.velocity.x = -200;
+        if (sprite.x < 5) {
+            left = false;
+        }
+    }
+    else {
+        sprite.body.velocity.x = 200;
+        if (sprite.x > 500 + sprite.width) {
+            left = true;
+        }
+    }
+
+}
+
+function collectStar (player, star) {    
+    star.kill();
+    score += 10;
+    scoreText.text = 'Score: ' + score;
+
+}
+
+function revealClue (player, sprite) {
+    var num = sprite.name;
+    oldx = map[num].x;
+    map[num].x = sprite.x;
+    if (sprite.x > oldx + map2[num] - 130)
+        map[num].x = oldx + map2[num] - 130;
+    map[num].y = sprite.y-100;
+    sprite.kill();
+    score += 100;
+    scoreText.text = 'Score: ' + score;
+    map[num].setStyle({ font: "20pt Arial", fill: "rgba(50,50,50,100)", align: "center", wordWrap: "true", wordWrapWidth: "300"});
+}
+
+function render () {
+}
+
+</script>
+
+</body>
+</html>
