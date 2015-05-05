@@ -46,6 +46,42 @@ h2{
   font-style: italic;
 }
 
+header.topbar{
+    background-color: #F6F6F6;
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    text-align: left;
+    color: green;
+}
+
+header.topbar ul li {
+     display: inline;
+     padding-right: 20px;
+     padding-left: 20px;
+     }
+
+header li a.home {
+     text-align: left;
+     color: red;
+     }
+header li a.game {
+     text-align: right;
+     color: green;
+     }
+header li a.github {
+     text-align: right;
+     color: blue;
+     }
+
+
+#content {
+  margin-top: 100px;
+  position: relative;
+}
 #iconscontainer ul
 {
   padding: 50px;
