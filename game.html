@@ -113,34 +113,34 @@ function create() {
     sprites.enableBody = true;
 
     
-doshit('Fall 2013',4,0,0,false);
-doshit('6.01 - Intro to EECS I',1,1,0,true);
-doshit('8.022 - Electricity and Magnetism',1,1,1,true);
-doshit('17.30 - Making Public Policy',1,1,2,true);
-doshit('18.701 - Algebra I',1,1,3,true);
-doshit('Spring 2014',6,0,4,false);
-doshit('5.111 - Principles of Chemistry',1,1,4,true);
-doshit('6.005 - Software Construction',1,1,5,true);
-doshit('6.006 - Intro to Algorithms',1,1,6,true);
-doshit('6.046 - Design and Analysis of Algorithms',1,1,7,true);
-doshit('18.100C - Real Analysis',1,1,8,true);
-doshit('21W.789 - Communicating with Mobile Technology',1,1,9,true);
-doshit('Fall 2014',4,0,10,false);
-doshit('6.840 - Theory of Computation',1,1,10,true);
-doshit('6.854 - Advanced Algorithms',1,1,11,true);
-doshit('18.112 - Complex Analysis',1,1,12,true);
-doshit('21F.109 - Chinese III',1,1,13,true);
-doshit('Spring 2015',5,0,14,false);
-doshit('6.004 - Computation Structures',1,1,14,true);
-doshit('8.04 - Quantum Mechanics I (Listener)',1,1,15,true);
-doshit('21F.110 - Chinese IV',1,1,16,true);
-doshit('6.857 - Computer and Network Security',1,1,17,true);
-doshit('18.318 - Extremal Graph Theory',1,1,18,true);
-doshit('Fall 2015 (Tentative)',4,0,19,false);
-doshit('6.867 - Machine Learning',1,1,19,true);
-doshit('Stat 210 (Harvard)',1,1,20,true);
-doshit('21F.113 - Chinese V',1,1,21,true);
-doshit('7.012 - Introduction to Biology',1,1,22,true);
+    doshit('Fall 2013',4,0,0,false);
+    doshit('6.01 - Intro to EECS I',1,1,0,true);
+    doshit('8.022 - Electricity and Magnetism',1,1,1,true);
+    doshit('17.30 - Making Public Policy',1,1,2,true);
+    doshit('18.701 - Algebra I',1,1,3,true);
+    doshit('Spring 2014',6,0,4,false);
+    doshit('5.111 - Principles of Chemistry',1,1,4,true);
+    doshit('6.005 - Software Construction',1,1,5,true);
+    doshit('6.006 - Intro to Algorithms',1,1,6,true);
+    doshit('6.046 - Design and Analysis of Algorithms',1,1,7,true);
+    doshit('18.100C - Real Analysis',1,1,8,true);
+    doshit('21W.789 - Communicating with Mobile Technology',1,1,9,true);
+    doshit('Fall 2014',4,0,10,false);
+    doshit('6.840 - Theory of Computation',1,1,10,true);
+    doshit('6.854 - Advanced Algorithms',1,1,11,true);
+    doshit('18.112 - Complex Analysis',1,1,12,true);
+    doshit('21F.109 - Chinese III',1,1,13,true);
+    doshit('Spring 2015',5,0,14,false);
+    doshit('6.004 - Computation Structures',1,1,14,true);
+    doshit('8.04 - Quantum Mechanics I (Listener)',1,1,15,true);
+    doshit('21F.110 - Chinese IV',1,1,16,true);
+    doshit('6.857 - Computer and Network Security',1,1,17,true);
+    doshit('18.318 - Extremal Graph Theory',1,1,18,true);
+    doshit('Fall 2015 (Tentative)',4,0,19,false);
+    doshit('6.867 - Machine Learning',1,1,19,true);
+    doshit('Stat 210 (Harvard)',1,1,20,true);
+    doshit('21F.113 - Chinese V',1,1,21,true);
+    doshit('7.012 - Introduction to Biology',1,1,22,true);
 
 
 
@@ -263,11 +263,11 @@ function update() {
     //  Allow the player to jump if they are touching the ground.
     if (cursors.up.isDown && player.body.touching.down)
     {
-        player.body.velocity.y = -350;
+        player.body.velocity.y = -750;
     }
     if (cursors.up.isDown && !player.body.touching.down)
     {
-        player.body.velocity.y = -150;
+        player.body.velocity.y = -350;
     }
 
     if (left) {
@@ -289,7 +289,6 @@ function collectStar (player, star) {
     star.kill();
     score += 10;
     scoreText.text = 'Score: ' + score;
-
 }
 
 function revealClue (player, sprite) {
