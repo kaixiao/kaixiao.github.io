@@ -65,22 +65,22 @@ header.topbar ul li {
 
      }
 
-header li a.home {
+header li div.home {
      color: #cccccc;
      }
-header li a.random1 {
+header li div.random1 {
      color: #d27979;
      }
-header li a.random2 {
+header li div.random2 {
      color: #c1d279;
      }
-header li a.random3 {
+header li div.random3 {
      color: #79d29d;
      }
-header li a.game {
+header li div.game {
      color: #799dd2;
      }
-header li a.github {
+header li div.github {
      color: #c179d2;
      }
 
