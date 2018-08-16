@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Kai Xiao</title>
+    <title>Kai Y. Xiao</title>
     <link href='http://fonts.googleapis.com/css?family=Josefin+Slab:600' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Exo' rel='stylesheet' type='text/css'>
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
@@ -13,30 +13,146 @@
   <header id = "header" class = "topbar">
     <ul>
     <li class="navbar-left"><div class="home">kai xiao</div></li>
-    <li class="navbar-right"><div class="github">awesome</div></li>
-    <li class="navbar-right"><div class="game">super</div></li>
-    <li class="navbar-right"><div class="random3">are</div></li>
-    <li class="navbar-right"><div class="random2">colors</div></li>
-    <li class="navbar-right"><div class="random1">rainbow</div></li>
+    <li class="navbar-right"><a href=#hobbies class="purple">hobbies</a></li>
+    <!-- <li class="navbar-right"><div class="blue">super</div></li> -->
+    <li class="navbar-right"><a href=#research class="teal">research</a></li>
+    <!-- <li class="navbar-right"><div class="yellowgreen">colors</div></li> -->
+    <li class="navbar-right"><a href=#bio class="red">bio</a></li>
 
     </ul>
   </header>
-  <div id = "content">
-    <div id="info-text"> <h1>Hi there!</h1> <br>
-     I'm currently a first-year PhD student at MIT <a href="game" class="game">studying</a> Theoretical Computer Science and Deep Learning. I previously interned at <a href="https://www.janestreet.com/">Jane Street</a>, <a href="https://a9.com/">A9</a>, <a href="http://www.deshaw.com/">DE Shaw</a>, and <a href="https://www.citadel.com/">Citadel</a>. I studied abroad at Oxford in Spring 2016 - check out <a href="https://kaikaixiao.wordpress.com/">my blog</a> about my experiences there! </div>
+  <div id = "bio">
+    <div id = "content">
+      <br />
+      <div id = "iconscontainer">
+        <ul>
+          <li><a target="_blank" href="https://scholar.google.com/citations?user=xblGvQgAAAAJ&hl=en"><img src="img/google-scholar.png" class="icon"/></a></li>
+          <li><a target="_blank" href="http://github.com/kaixiao/"><img src="img/github.png" class="icon"/></a></li>
+          <li><a target="_blank" href="files/resume.pdf"><img src="img/resume.png" class="icon"/></a></li>
+          <li><a target="_blank" href="https://www.linkedin.com/in/kaixiao"><img src="img/linkedin.png" class="icon"/></a></li>
+        </ul>
+        kaix (at) mit (dot) edu
+        <br />
+      </div>
 
-     <div>I also enjoy thinking about online games and algorithms. Here's some research I've worked on relating to the games <a href="https://arxiv.org/abs/1501.01720">Mousehunt</a> and Cookie Clicker (coming in January 2018).</div>
 
-    <div id = "iconscontainer">
-      <ul>
-        <li><a target="_blank" href="http://github.com/kaixiao/"><img src="img/github.png" class="icon"/></a></li>
-        <li><a target="_blank" href="files/resume.pdf"><img src="img/resume.png" class="icon"/></a></li>
-        <li><a target="_blank" href="https://www.linkedin.com/in/kaixiao"><img src="img/linkedin.png" class="icon"/></a></li>
-        <li><a target="_blank" href="https://www.facebook.com/kaikaixiao"><img src="img/facebook.png" class="icon"/></a></li>
-      </ul>
-      kaix (at) mit (dot) edu
+      <div id="info-text">
+      <h1> Bio </h1>
+      <p><img src="img/KaiXiao.jpg" width="400px" style="margin-left: 50px; float:right; margin-top: 0px; margin-bottom: 1-0px;" />
+        I’m currently a second-year PhD student at MIT CSAIL, fortunate to be advised by Aleksander Madry. I received my <a href="game.html">B.S.</a> from MIT in Mathematics and Computer Science and completed my M.Eng Thesis at MIT CSAIL on <a href="http://erikdemaine.org/theses/kxiaoM.pdf">Cookie Clicker</a> under the guidance of <a href="http://erikdemaine.org/">Erik Demaine</a>.
+        <br />
+        <br />
+        My current research interests are in Theoretical Machine Learning. I also enjoy thinking about online games and algorithms.
+        <br />
+        <br />
+        Previously, I interned at <a href="https://www.citadel.com/">Citadel</a>, <a href="http://www.deshaw.com/">DE Shaw</a>, <a href="https://a9.com/">A9</a>, and <a href="https://www.janestreet.com/">Jane Street</a>. I was the corporate relations director for <a href="https://techx.io/">MIT TechX</a> in 2014. I also studied abroad at the University of Oxford in Spring 2016 - check out <a href="https://kaikaixiao.wordpress.com/">my blog</a> about my experiences there! </div>
+      </p>
+      </div>
     </div>
-    
+  </div>
+  <div id = "research">
+    <div id = "research-text">
+    <h1> Research </h1>
+    In theoretical machine learning, I am specifically interested in using theoretical insights to motivate empirical experiments that can help us understand machine learning. So far, a major focus of my research has been related to robust and secure machine learning.
+    <br />
+    <br />
+    I am also interested in reinforcement learning and its potential applications, both to gaming and beyond.
+    <h2> Publications </h2>
+    <br />
+    <h2> Preprints </h2>
+    <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+      <tbody>
+        <tr id='rs'>
+          <td width="25%">
+            <img src="img/rs-cover-img.png" width="100%">
+          </td>
+          <td valign="top" width="75%">
+            <p>
+                The ReLU Stabilizer: Universal Neural Network Training Methods for Faster Verification
+              <br>
+              <strong>Kai Xiao</strong>, <a href=https://www.linkedin.com/in/vincent-t-14243683/>Vincent Tjeng</a>, <a href=http://web.mit.edu/nshafiul/www/>Nur Muhammad (Mahi) Shafiullah</a>, <a href=https://people.csail.mit.edu/madry/>Aleksander Madry</a>
+              <br>
+              <!-- <em>Under Review</em>, NIPS 2018 -->
+              <!-- <br> -->
+            </p>
+            <p>
+              This paper explores co-designing neural networks to be both robust and easily verifiable. The paper identifies two key properties of neural networks that make it more amenable to verification - weight sparsity and ReLU stability - and describes regularization methods to achieve these goals during training without significantly hurting the neural network's accuracy. These techniques can be used in conjunction with any standard training procedure, and they allows us to train provably robust networks for MNIST and CIFAR-10.
+            </p>
+          </td>
+        </tr>
+        <tr id='milp'>
+          <td width="25%">
+            <img src="img/milp-cover-img.png" width="100%" >
+          </td>
+          <td valign="top" width="75%">
+            <p>
+              <a href="https://arxiv.org/abs/1711.07356">
+                Evaluating Robustness of Neural Networks with Mixed Integer Programming
+              </a>
+              <br>
+              <a href=https://www.linkedin.com/in/vincent-t-14243683/>Vincent Tjeng</a>, <strong>Kai Xiao</strong>, <a href=https://groups.csail.mit.edu/locomotion/russt.html>Russ Tedrake</a>
+              <br>
+              <!-- <em>Under Review</em>, NIPS 2018 -->
+              <!-- <br> -->
+            </p>
+            <p>
+              This paper leverages mixed integer linear programs to verify the robustness of neural networks in a speed that is two to three orders of magnitude quicker than the previous state-of-the-art. The computational speedup is achieved through tight formulations for non-linearities, as well as a novel presolve algorithm that makes full use of all information available. This allows us to verify the robustness of larger convolutional networks, and determine, for the first time, the exact adversarial accuracy of an MNIST classifier to norm-bounded perturbations.
+            </p>
+          </td>
+        </tr>
+        <tr id='cc'>
+          <td width="25%">
+            <img src="img/cc-cover-img.jpg" width="100%">
+          </td>
+          <td valign="top" width="75%">
+            <p>
+              <a href="http://erikdemaine.org/theses/kxiaoM.pdf">
+                Cookie Clicker
+              </a>
+              <br>
+              <a href=http://erikdemaine.org/>Erik D. Demaine</a>, <a href=http://www.alg.cei.uec.ac.jp/itohiro/souran/itohiro-e.html>Hiro Ito</a>, <a href=http://www.ulb.ac.be/di/algo/sl/>Stefan Langerman</a>, <a href=https://www.linkedin.com/in/jayson-lynch-b6297ab/>Jayson Lynch</a>, <a href=https://www.researchgate.net/scientific-contributions/2090377629_Mikhail_Rudoy>Mikhail Rudoy</a>, <strong>Kai Xiao</strong>
+              <br>
+              <!-- <em>Under Review</em>, NIPS 2018 -->
+              <!-- <br> -->
+            </p>
+            <p>
+              Cookie Clicker is a popular online incremental game where the goal of the game is to generate as many cookies as possible. In the game you start with an initial cookie generation rate, and you can use cookies as currency to purchase various items that increase your cookie generation rate. In this paper, we analyze strategies for playing Cookie Clicker optimally. While simple to state, the game gives rise to interesting analysis involving ideas from NPhardness, approximation algorithms, and dynamic programming.
+            </p>
+          </td>
+        </tr>
+        <tr id='mh'>
+          <td width="25%">
+            <img src="img/mh-cover-img.jpg" width="100%">
+          </td>
+          <td valign="top" width="75%">
+            <p>
+              <a href="https://arxiv.org/abs/1501.01720">
+                Online Algorithms Modeled After Mousehunt
+              </a>
+              <br>
+              <a href=https://www.linkedin.com/in/jeffrey-ling-92163879/>Jeffrey Ling</a>, <strong>Kai Xiao</strong>, <a href=https://www.linkedin.com/in/dai-yang-7983b363/>Dai Yang</a>
+              <br>
+              <!-- <em>Under Review</em>, NIPS 2018 -->
+              <!-- <br> -->
+            </p>
+            <p>In this paper we study a variety of novel online algorithm problems inspired by the game Mousehunt. We consider a number of basic models that approximate the game, and we provide solutions to these models using Markov Decision Processes, deterministic online algorithms, and randomized online algorithms. We analyze these solutions' performance by deriving results on their competitive ratios.
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    </div>
+  </div>
+  <div id = "hobbies">
+    <div id = "hobbies-text">
+    <h1> Hobbies </h1>
+      In my spare time, I enjoy traveling. Some of my favorite cities to visit have been <a href="https://kaikaixiao.wordpress.com/2016/04/26/florence-love-story/">Florence</a>, <a href="https://kaikaixiao.wordpress.com/2016/02/21/copenhagen-and-malmo-who-needs-planning/">Copenhagen</a>, <a href="https://kaikaixiao.wordpress.com/2016/05/13/barcelona-and-madrid-colorful/">Barcelona</a>, and <a href="https://traveldiaristblog.wordpress.com/2017/06/27/kyoto-day-27-628/">Kyoto</a>.
+      <br />
+      <br />
+      <br />
+      I also enjoy dancing, especially hip-hop and K-pop dance. Sometimes I dance in fun cover videos of K-pop groups with my friends from the MIT Asian Dance Team and Eclipse K-pop - <a href="https://www.youtube.com/watch?v=sLnmAJLyA1c">like</a> <a href="https://www.youtube.com/watch?v=0EbTlTUy45w">in</a> <a href="https://www.youtube.com/watch?v=PIGSmlhqBAE">these</a> <a href="https://www.youtube.com/watch?v=jWWpH4k-y3c">five</a> <a href="https://www.youtube.com/watch?v=0Eh9fcjhQ84">videos</a>.
+    </div>
     <div id = "inspirationalquote"><h2>It's a magical world, Hobbes, ol' buddy... Let's go exploring!</h2></div>
 
     <div id="copyright">

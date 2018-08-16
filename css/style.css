@@ -12,7 +12,7 @@
 
 .icon{
 	opacity:0.4;
-	height:150px;
+	height:75px;
 	filter:alpha(opacity=30);
 }
 .icon:hover{
@@ -22,27 +22,28 @@
 
 
 html {
-  background:url('../img/birds-nest-blur-2.jpg') no-repeat center center fixed;
-  -webkit-background-size:cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  min-height: 100%;
-  min-width: 100%;
+  background: #F7F7F7;
 }
 
 body {
   font-family: 'Exo', serif;
   font-size: 20px;
-  color: white;
+  color: black;
   text-align: center;
+  margin: 0;
+}
+
+strong {
+  font-weight: 4000;
+  color: #000000;
 }
 
 h1{
-  font-size: 50px;
+  font-size: 30px;
 
 }
 h2{
+  padding-top: 20px;
   font-size: 20px;
   font-style: italic;
 }
@@ -55,7 +56,7 @@ header.topbar{
     top: 0;
     left: 0;
     text-align: left;
-    background-color: #ffffff;
+    background-color: #F7F7F7;
     z-index: 1
 }
 
@@ -68,21 +69,21 @@ header.topbar ul li {
      }
 
 header li div.home {
-     color: #cccccc;
+     color: #bbbbbb;
      }
-header li div.random1 {
+header li div.red {
      color: #d27979;
      }
-header li div.random2 {
+header li div.yellowgreen {
      color: #c1d279;
      }
-header li div.random3 {
+header li div.teal {
      color: #79d29d;
      }
-header li div.game {
+header li div.blue {
      color: #799dd2;
      }
-header li div.github {
+header li div.purple {
      color: #c179d2;
      }
 
@@ -94,52 +95,161 @@ header li div.github {
     float: right !important;
   }
 
+#bio {
+    position: relative;
+}
+
+#bio::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../img/procida.jpg') no-repeat center center fixed;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    opacity: .2;
+    content: "";
+    z-index: -1;
+    -webkit-animation: myfirst 5s ;
+    animation: myfirst 5s ;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes myfirst {
+  from {opacity: 0.8;}
+  to {opacity: 0.2;}
+}
+
+/* Standard syntax */
+@keyframes myfirst {
+  from {opacity: 0.8;}
+  to {opacity: 0.2;}
+}
+
+
+#research {
+  position: relative;
+}
+
+#research-text{
+  padding-top: 100px;
+  padding-bottom: 50px;
+  font-size: 18px;
+  width: 70%;
+  margin-right: auto;
+  margin-left: auto;
+  position: relative;
+  text-align: left;
+}
+
+#research::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #F7F7F7;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    content: "";
+    z-index: -1;
+}
+
+#hobbies {
+  position: relative;
+}
+
+#hobbies-text{
+  padding-top: 100px;
+  padding-bottom: 20px;
+  font-size: 18px;
+  width: 70%;
+  margin-right: auto;
+  margin-left: auto;
+  position: relative;
+  text-align: left;
+}
+
+#hobbies::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../img/geirangerfjord.jpg') no-repeat center center fixed;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    opacity: .2;
+    content: "";
+    z-index: -1;
+}
 
 #content {
-  margin-top: 100px;
+  padding-top: 100px;
   position: relative;
+  padding-bottom: 100px;
+  /*background:url('../img/birds-nest-blur-2.jpg') no-repeat center center fixed;*/
 }
 
 #iconscontainer ul
 {
-  padding: 50px;
+  padding: 10px;
   margin:auto;
   text-align: center;
   position: relative;
-  height: 120px;
+  height: 100px;
 }
 
 #iconscontainer ul li { display: inline; }
 #iconscontainer ul li img {
 	max-height: 100%;
 	max-width: 100%;
-  padding: 25px;
-	margin:auto;
+  padding: 10px;
+	margin: auto;
 }
 
 #info-text {
-  color: #ffffff;
-  padding-top: 20px;
+  color: #000000;
+  padding-top: 100px;
   padding-bottom: 20px;
-  font-size: 20px;
-  width: 70%%;
+  font-size: 18px;
+  width: 70%;
   margin-right: auto;
   margin-left: auto;
   position: relative;
+  text-align: left;
 }
 
 #inspirationalquote {
-  color: #ffffff;
-  padding-top: 50px;
+  color: #000000;
+  padding-top: 100px;
   padding-bottom: 50px;
   margin-right: auto;
   margin-left: auto;
   position: relative;
+  text-align: center;
 }
 
 #copyright {
   position: relative;
   bottom: 30px;
+  padding-bottom: 200px;
   width: 100%;
   text-align: center;
   font-size: 70%;
@@ -148,20 +258,67 @@ header li div.github {
 
 /* unvisited link */
 a:link {
-    color: #BBBBBB;
+    color: #799dd2;
     text-decoration: none;
 }
-
 /* visited link */
 a:visited {
-    color: #BBBBBB;
+    color: #799dd2;
     text-decoration: none;
 }
-
 /* mouse over link */
 a:hover {
     color: #FFFFFF;
     text-decoration: none;
 }
+
+/* unvisited link */
+a.red:link {
+    color: #d27979;
+    text-decoration: none;
+}
+/* visited link */
+a.red:visited {
+    color: #d27979;
+    text-decoration: none;
+}
+/* mouse over link */
+a:hover {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+/* unvisited link */
+a.teal:link {
+    color: #79d29d;
+    text-decoration: none;
+}
+/* visited link */
+a.teal:visited {
+    color: #79d29d;
+    text-decoration: none;
+}
+/* mouse over link */
+a:hover {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+/* unvisited link */
+a.purple:link {
+    color: #c179d2;
+    text-decoration: none;
+}
+/* visited link */
+a.purple:visited {
+    color: #c179d2;
+    text-decoration: none;
+}
+/* mouse over link */
+a:hover {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
 
 
