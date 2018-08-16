@@ -113,6 +113,8 @@ header li div.purple {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    height: 100%;
+    overflow: hidden;
     opacity: .2;
     content: "";
     z-index: -1;
@@ -195,6 +197,8 @@ header li div.purple {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    height: 100%;
+    overflow: hidden;
     opacity: .2;
     content: "";
     z-index: -1;
