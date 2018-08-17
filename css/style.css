@@ -11,7 +11,7 @@
 
 
 .icon{
-	opacity:0.4;
+	opacity:0.7;
 	height:75px;
 	filter:alpha(opacity=30);
 }
@@ -262,67 +262,36 @@ header li div.purple {
 
 /* unvisited link */
 a:link {
-    color: #799dd2;
+    color: #00008b;
     text-decoration: none;
 }
 /* visited link */
 a:visited {
+    color: #00008b;
+    text-decoration: none;
+}
+/* mouse over link */
+a:hover {
     color: #799dd2;
     text-decoration: none;
 }
-/* mouse over link */
-a:hover {
-    color: #FFFFFF;
-    text-decoration: none;
-}
 
 /* unvisited link */
-a.red:link {
-    color: #d27979;
+a.blue:link {
+    color: #00008b;
     text-decoration: none;
 }
 /* visited link */
-a.red:visited {
-    color: #d27979;
+a.blue:visited {
+    color: #00008b;
     text-decoration: none;
 }
 /* mouse over link */
-a:hover {
-    color: #FFFFFF;
+a.blue:hover {
+    color: #799dd2;
     text-decoration: none;
 }
 
-/* unvisited link */
-a.teal:link {
-    color: #79d29d;
-    text-decoration: none;
-}
-/* visited link */
-a.teal:visited {
-    color: #79d29d;
-    text-decoration: none;
-}
-/* mouse over link */
-a:hover {
-    color: #FFFFFF;
-    text-decoration: none;
-}
-
-/* unvisited link */
-a.purple:link {
-    color: #c179d2;
-    text-decoration: none;
-}
-/* visited link */
-a.purple:visited {
-    color: #c179d2;
-    text-decoration: none;
-}
-/* mouse over link */
-a:hover {
-    color: #FFFFFF;
-    text-decoration: none;
-}
 
 
 
