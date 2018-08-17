@@ -27,9 +27,9 @@ html {
 
 body {
   font-family: 'Exo', serif;
-  font-size: 20px;
+  font-size: 18px;
   color: black;
-  text-align: center;
+  text-align: left;
   margin: 0;
 }
 
@@ -40,10 +40,9 @@ strong {
 
 h1{
   font-size: 30px;
-
 }
+
 h2{
-  padding-top: 20px;
   font-size: 20px;
   font-style: italic;
 }
@@ -55,7 +54,6 @@ header.topbar{
     height: 60px;
     top: 0;
     left: 0;
-    text-align: left;
     background-color: #F7F7F7;
     z-index: 1
 }
@@ -65,12 +63,8 @@ header.topbar ul li {
      display: inline;
      padding-right: 20px;
      padding-left: 20px;
-
      }
 
-header li div.home {
-     color: #bbbbbb;
-     }
 header li div.red {
      color: #d27979;
      }
@@ -88,18 +82,30 @@ header li div.purple {
      }
 
   
-  .navbar-left {
-    float: left !important;
-  }
-  .navbar-right {
-    float: right !important;
-  }
+.navbar-left {
+  float: left !important;
+}
+.navbar-right {
+  float: right !important;
+}
 
-#bio {
+/* Chrome, Safari, Opera */
+@-webkit-keyframes myfirst {
+  from {opacity: 0.8;}
+  to {opacity: 0.2;}
+}
+
+/* Standard syntax */
+@keyframes myfirst {
+  from {opacity: 0.8;}
+  to {opacity: 0.2;}
+}
+
+#first-section {
     position: relative;
 }
 
-#bio::before {
+#first-section::before {
     position: absolute;
     top: 0;
     left: 0;
@@ -122,32 +128,43 @@ header li div.purple {
     animation: myfirst 5s ;
 }
 
-/* Chrome, Safari, Opera */
-@-webkit-keyframes myfirst {
-  from {opacity: 0.8;}
-  to {opacity: 0.2;}
+#iconscontainer
+{
+  padding-top: 120px;
 }
 
-/* Standard syntax */
-@keyframes myfirst {
-  from {opacity: 0.8;}
-  to {opacity: 0.2;}
-}
-
-
-#research {
+#iconscontainer ul
+{
+  padding: 10px;
+  margin:auto;
+  text-align: center;
   position: relative;
+  height: 100px;
 }
 
-#research-text{
-  padding-top: 100px;
-  padding-bottom: 50px;
-  font-size: 18px;
+#iconscontainer ul li { display: inline; }
+#iconscontainer ul li img {
+  max-height: 100%;
+  max-width: 100%;
+  padding: 10px;
+  margin: auto;
+}
+
+#bio {
+  color: #000000;
+  padding-top: 50px;
+  padding-bottom: 20px;
   width: 70%;
   margin-right: auto;
   margin-left: auto;
   position: relative;
   text-align: left;
+}
+
+
+
+#research {
+  position: relative;
 }
 
 #research::before {
@@ -158,7 +175,6 @@ header li div.purple {
     right: 0;
     width: 100%;
     height: 100%;
-    background-color: #F7F7F7;
 
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -168,19 +184,20 @@ header li div.purple {
     z-index: -1;
 }
 
-#hobbies {
-  position: relative;
-}
-
-#hobbies-text{
-  padding-top: 100px;
+#research-text{
+  padding-top: 50px;
   padding-bottom: 20px;
-  font-size: 18px;
   width: 70%;
   margin-right: auto;
   margin-left: auto;
   position: relative;
   text-align: left;
+}
+
+
+
+#hobbies {
+  position: relative;
 }
 
 #hobbies::before {
@@ -204,35 +221,9 @@ header li div.purple {
     z-index: -1;
 }
 
-#content {
-  padding-top: 100px;
-  position: relative;
-  padding-bottom: 100px;
-  /*background:url('../img/birds-nest-blur-2.jpg') no-repeat center center fixed;*/
-}
-
-#iconscontainer ul
-{
-  padding: 10px;
-  margin:auto;
-  text-align: center;
-  position: relative;
-  height: 100px;
-}
-
-#iconscontainer ul li { display: inline; }
-#iconscontainer ul li img {
-	max-height: 100%;
-	max-width: 100%;
-  padding: 10px;
-	margin: auto;
-}
-
-#info-text {
-  color: #000000;
-  padding-top: 100px;
+#hobbies-text{
+  padding-top: 50px;
   padding-bottom: 20px;
-  font-size: 18px;
   width: 70%;
   margin-right: auto;
   margin-left: auto;
@@ -240,9 +231,11 @@ header li div.purple {
   text-align: left;
 }
 
+
+
 #inspirationalquote {
   color: #000000;
-  padding-top: 100px;
+  padding-top: 70px;
   padding-bottom: 50px;
   margin-right: auto;
   margin-left: auto;
@@ -275,23 +268,4 @@ a:hover {
     color: #799dd2;
     text-decoration: none;
 }
-
-/* unvisited link */
-a.blue:link {
-    color: #00008b;
-    text-decoration: none;
-}
-/* visited link */
-a.blue:visited {
-    color: #00008b;
-    text-decoration: none;
-}
-/* mouse over link */
-a.blue:hover {
-    color: #799dd2;
-    text-decoration: none;
-}
-
-
-
 
