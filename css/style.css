@@ -194,6 +194,21 @@ header li div.purple {
 }
 
 
+#teaching {
+  position: relative;
+}
+
+
+#teaching-text{
+  padding-top: 50px;
+  padding-bottom: 20px;
+  width: 70%;
+  margin-right: auto;
+  margin-left: auto;
+  position: relative;
+  text-align: left;
+}
+
 
 #hobbies {
   position: relative;
